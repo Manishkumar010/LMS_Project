@@ -6,3 +6,8 @@ export const appStore = configureStore({
     reducer:rootRedcuer,
     middleware:(defaultMiddleware) => defaultMiddleware().concat(authAPi.middleware)
 })
+
+const initializeApp = async ()=>{
+    await appStore.dispatch(authAPi.endpoints.loadUser.initiate({},{forceRefetch:true}))
+}
+initializeApp()
