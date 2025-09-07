@@ -4,6 +4,7 @@ import cors from "cors"
 import cookieParser from "cookie-parser";
 import ConnectDb from "./database/db.js";
 import userRoutes from "./routes/user.routes.js"
+import courseRoute from "./routes/course.route"
 dotenv.config({});
 
 // default middleware
@@ -15,7 +16,9 @@ app.use(cors({
     credentials: true
 }))
 
+// apis route
 app.use("/api/v1/user", userRoutes)
+app.use("/api/v1/course", courseRoute)
 
 const PORT = process.env.PORT || 3001;
 ConnectDb().then(() => {
