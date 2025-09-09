@@ -4,7 +4,7 @@ import cors from "cors"
 import cookieParser from "cookie-parser";
 import ConnectDb from "./database/db.js";
 import userRoutes from "./routes/user.routes.js"
-import courseRoute from "./routes/course.route"
+import courseRoute from "./routes/course.route.js"
 dotenv.config({});
 
 // default middleware

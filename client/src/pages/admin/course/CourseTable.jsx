@@ -56,7 +56,7 @@ const invoices = [
   },
 ]
 
-export function TableDemo() {
+const CourseTable =  () =>{
   const navigate = useNavigate();
   return (
     <div>
@@ -92,3 +92,4 @@ export function TableDemo() {
 
   )
 }
+export default CourseTable;

@@ -27,7 +27,7 @@ export const authAPi = createApi({
             async onQueryStarted(_, { queryFulfilled, dispatch }) {
                 try {
                     const result = await queryFulfilled;
-                    dispatch(userLoggedIn({ User: result.data.user }));
+                    dispatch(userLoggedIn({ user: result.data.user }));
                 } catch (error) {
                     console.log(error)
                 }
@@ -55,7 +55,7 @@ export const authAPi = createApi({
                async onQueryStarted(_, { queryFulfilled, dispatch }) {
                 try {
                     const result = await queryFulfilled;
-                    dispatch(userLoggedIn({ User: result.data.user }));
+                    dispatch(userLoggedIn({ user: result.data.user }));
                 } catch (error) {
                     console.log(error)
                 }

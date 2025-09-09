@@ -38,6 +38,8 @@ const Navbar = () => {
         await logoutUser();
     }
 
+// console.log("user check:", user);
+
     useEffect(() => {
         if (isSuccess) {
             toast.success(data.message || "User log out")
@@ -50,17 +52,19 @@ const Navbar = () => {
             {/* Desktop */}
             <div className='max-w-7xl mx-auto hidden md:flex justify-between items-center gap-10 h-full'>
                 <div className='flex items-center gap-2'>
+                    <Link to="/" className='flex gap-1'>
                     <School size={"30"} />
                     <h1 className='hidden md:block font-extrabold text-2xl'>E-Learning</h1>
+                    </Link>
                 </div>
 
                 {/* set a user profile logo */}
-                <div className='flex items-center gap-3'>
+                <div className='flex items-center gap-3 cursor-pointer'>
                     {user ? (
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Avatar>
-                                    <AvatarImage src={user.profilePhoto || "https://github.com/shadcn.png"} />
+                                    <AvatarImage src={user.photoURL || "https://github.com/shadcn.png"} />
                                     <AvatarFallback>CN</AvatarFallback>
                                 </Avatar>
                             </DropdownMenuTrigger>
